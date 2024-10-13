@@ -2,8 +2,6 @@
 #include <assert.h>
 #include <math.h>
 #include <stdlib.h>
-#include <string> 
-#include <iostream>
 #ifdef _WIN32
 #include <omp.h>
 #endif
