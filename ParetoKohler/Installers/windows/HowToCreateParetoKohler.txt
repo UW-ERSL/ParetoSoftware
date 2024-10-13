@@ -1,0 +1,29 @@
+
+Steps to create ParetoWinInstaller
+
+
+1. in LiveVariables.hpp turn various options at the top of the file to false
+
+2. Change VERSION and BUILDDATE of ParetoCore in CommonDefines.h
+
+3. Change PARETO_TEMP_EXPIRY in MacAddresses.txt
+
+4. Compile ParetoWin 
+
+5. Run cleanup.bat in ParetoExamples
+
+6. If there are changes to the ppt guide, make a new pdf and place it in resources directory
+
+7. Close or Pause DropBox. 
+
+8. Use KohlerInno64Bit to create ParetoWinInstaller
+
+9. Open ParetoWinCertificate  (you will need Ksign from http://codesigning.ksoftware.net/)
+
+10. Sign the installer 
+
+11. Use the installer to test all examples in ParetoGuide
+
+12. Restart DropBox to synchronize
+
+13. The installer and ParetoGuide.pdf are ready for distribution

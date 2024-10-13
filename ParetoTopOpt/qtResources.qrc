@@ -1,0 +1,10 @@
+<!DOCTYPE RCC>
+<RCC version="1.0"><qresource>
+<file alias="resources/available.png">resources/available.png</file>
+<file alias="resources/done.png">resources/done.png</file>
+<file alias="resources/notAllowed.png">resources/notAllowed.png</file>
+<file alias="resources/charSet.bin">resources/charSet.bin</file>
+<file alias="resources/ParetoGuide.pdf">resources/ParetoGuide.pdf</file>
+<file alias="resources/ParetoMaterials.csv">resources/ParetoMaterials.csv</file>
+</qresource>
+</RCC>

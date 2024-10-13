@@ -1,0 +1,7 @@
+1. In Qt, ParetoWin project, uncomment the three lines to create paretostatic lib
+2. Open ParetoTopOptBatchMode.sln in Visual Studio 2015
+3. Rebuild
+4. Copy the .exe from x64 to sampleStandAlone
+5. Open a command window in sampleStandAlone folder
+6. Type
+.\ParetoTopOptBatchMode.exe .\CantileverBeamProject.prj

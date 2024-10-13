@@ -1,0 +1,7 @@
+outerCyl = cylinder(240,130);
+innerCyl = cylinder(205,130);
+final = outerCyl.subtract(innerCyl);
+final = final.rotateX(90);
+final = final.moveX(5);
+final = final.moveZ(65);
+final.display(); // Press F5 to see the result

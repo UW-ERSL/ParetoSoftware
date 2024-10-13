@@ -1,0 +1,16 @@
+End User License Agreement
+
+By installing, copying, or otherwise using ParetoWin, you agree to be bound by the terms of the following END USER LICENSE AGREEMENT (EULA).
+
+If you do not agree to the terms of this EULA, do not install or use ParetoWin.
+
+This WARF EULA is a legal agreement between you (either an individual or a single entity) and Wisconsin Alumni Research Foundation (WARF) for Pareto which includes computer software and may include associated media, printed materials, and 'online' or electronic documentation. WARF grants you the non-exclusive license to use ONE copy of the Software as long as you comply with the terms of this EULA.
+
+Pareto technology is owned by WARF, and is protected  by copyright laws and international copyright treaties, as well as other intellectual property laws and treaties. This version also uses Qt under the LPGL license (see http://doc.qt.io/qt-5/lgpl.html). Therefore, you must treat this Software just like a book or any other copyrighted material (e.g., recordings or film). You may make archival copies of the Software. 
+
+The Pareto software is free to use by academic institutions for teaching and fundamental research (non-commercial grants).
+
+WARF makes no warranty, including but not limited to any implied warranties of merchantability or fitness for a particular purpose, regarding the Software or accompanying materials. The Software and accompanying materials are provided solely on an as-is basis. 
+
+In no event shall WARF  be liable for any special, collateral, incidental, or consequential damages in connection with or arising out of the purchase or use of the Software and accompanying materials.
+

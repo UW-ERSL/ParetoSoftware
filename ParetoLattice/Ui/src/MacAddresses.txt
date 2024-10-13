@@ -1,0 +1,11 @@
+#define NUM_PARETO_USERS 4
+
+char allowedMacAddresses[NUM_PARETO_USERS][256]= // 16 chars Of Serial, date, month, yearOfExpiry, BasicOrProversion Other
+{
+      {"1C697ABD3F76 15 08 2025 0 0"},//Suresh Office Desktop
+      {"3E5576BDDE8B 15 12 2025 0 0"},// Suresh Acer Desktop
+      {"448A5B9FC059 15 12 2025 0 0"},// Akshay Lenovo Desktop
+      {"1C697ABC0331 15 12 2025 0 0"},// Suresh Home Desktop
+};
+
+int PARETO_TEMP_EXPIRY[] = {15,06,2026};//date, month,year

@@ -1,0 +1,14 @@
+#define DUMP_BASIC 0
+#define DUMP_UVW 1
+#define DUMP_VOXELMESH 2
+#define DUMP_MODAL 3
+#define DUMP_TOPOPT_ISO 4
+#define DUMP_TEMP 5
+#define DUMP_UVW_TEMP 6
+#define DUMP_MESH 7
+#define DUMP_GENESIS 8
+#define DUMP_BND 9
+#define DUMP_ABAQUS_RPT 10
+#define DUMP_ISO_UVW 11
+#define DUMP_UVW_NODES 12
+#define DUMP_SIMP_DENSITY 13

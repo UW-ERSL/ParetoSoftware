@@ -1,0 +1,184 @@
+#pragma once
+
+#include <QtCore/QVariant>
+#include <QtWidgets/QAction>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QWidget>
+#include <QtCharts>
+
+#include <QtCharts/QChartView>
+#include <QtCharts/QSplineSeries>
+#include <QValueAxis>
+#include <QDialog>
+
+
+#include "TopOptViewer.hpp"
+
+QT_BEGIN_NAMESPACE
+
+class Ui_OptimizationResultDialog
+{
+public:
+
+
+
+    QVBoxLayout *mainLayout;
+
+    QHBoxLayout *topologyAtVolLayout;
+    QDoubleSpinBox *topologyAtVolSpinBox;
+    QLabel *topologyAtVolLabel;
+
+    QPushButton *saveTopologyPushButton;
+    QPushButton *saveCleanTopologyPushButton;
+    QPushButton *loadMeshPushButton;
+    QPushButton *saveMeshPushButton;
+    QPushButton *saveMeshSurfacePushButton;
+    QHBoxLayout *loadSetLayout;
+    QLabel *loadLabel;
+    QSpinBox *loadSpinBox;
+    QPushButton *plotParetoCurvesPushButton;
+    QPushButton *plotCGIterPushButton;
+    QPushButton *createHTMLReportPushButton;
+    QPushButton *closePushButton;
+    void setupUi(QDialog *Dialog)
+    {
+        if (Dialog->objectName().isEmpty())
+            Dialog->setObjectName(QStringLiteral("Dialog"));
+
+
+        Dialog->setMinimumWidth(GUI_MIN_WIDTH);
+
+        mainLayout = new QVBoxLayout(Dialog);
+
+        topologyAtVolLayout = new QHBoxLayout(Dialog);
+        topologyAtVolSpinBox = new QDoubleSpinBox(Dialog);
+        topologyAtVolSpinBox->setRange(0, 1);
+        topologyAtVolSpinBox->setSingleStep(0.05);
+        topologyAtVolSpinBox->setValue(1.0);
+
+        topologyAtVolLabel = new QLabel(Dialog);
+        topologyAtVolLayout->addWidget(topologyAtVolLabel);
+        topologyAtVolLayout->addWidget(topologyAtVolSpinBox);
+
+        mainLayout->addLayout(topologyAtVolLayout);
+
+        saveTopologyPushButton = new QPushButton(Dialog);
+        mainLayout->addWidget(saveTopologyPushButton);
+
+        saveCleanTopologyPushButton = new QPushButton(Dialog);
+        mainLayout->addWidget(saveCleanTopologyPushButton);
+
+        loadMeshPushButton = new QPushButton(Dialog);
+        mainLayout->addWidget(loadMeshPushButton);
+
+        saveMeshPushButton = new QPushButton(Dialog);
+        mainLayout->addWidget(saveMeshPushButton);
+
+        saveMeshSurfacePushButton = new QPushButton(Dialog);
+        mainLayout->addWidget(saveMeshSurfacePushButton);
+
+        // load
+        loadSetLayout = new QHBoxLayout(Dialog);
+        loadLabel = new QLabel;
+        loadSpinBox = new QSpinBox;
+        loadSpinBox->setRange(0, 10);
+        loadSpinBox->setSingleStep(1);
+        loadSpinBox->setValue(0);
+        loadSetLayout->addWidget(loadLabel);
+        loadSetLayout->addWidget(loadSpinBox);
+        mainLayout->addLayout(loadSetLayout);
+
+        plotParetoCurvesPushButton = new QPushButton(Dialog);
+        mainLayout->addWidget(plotParetoCurvesPushButton);
+
+        plotCGIterPushButton = new QPushButton(Dialog);
+        mainLayout->addWidget(plotCGIterPushButton);
+
+
+        createHTMLReportPushButton = new QPushButton(Dialog);
+        mainLayout->addWidget(createHTMLReportPushButton);
+
+
+        closePushButton= new QPushButton(Dialog);
+        mainLayout->addWidget(closePushButton);
+
+        if (!PARETO_RESEARCH)
+            saveCleanTopologyPushButton->hide();
+        createHTMLReportPushButton->hide();
+        loadMeshPushButton->hide();
+        saveMeshPushButton->hide();
+        saveMeshSurfacePushButton->hide();
+        plotCGIterPushButton->hide();
+
+
+        retranslateUi(Dialog);
+
+        QMetaObject::connectSlotsByName(Dialog);
+    } // setupUi
+
+    void retranslateUi(QDialog *Dialog)
+    {
+        Dialog->setWindowTitle(QApplication::translate("Dialog", "TopOpt Results", Q_NULLPTR));
+
+        topologyAtVolLabel->setText(QApplication::translate("Dialog", "Topology@Vol", Q_NULLPTR));
+        createHTMLReportPushButton->setText(QApplication::translate("Dialog", "Create HTML Report", Q_NULLPTR));
+        plotCGIterPushButton->setText(QApplication::translate("Dialog", "plot CG iter", Q_NULLPTR));
+        saveMeshSurfacePushButton->setText(QApplication::translate("Dialog", "save Mesh surface", Q_NULLPTR));
+        saveMeshPushButton->setText(QApplication::translate("Dialog", "save Mesh", Q_NULLPTR));
+        loadLabel->setText(QApplication::translate("Dialog", "Load Set: ", Q_NULLPTR));
+        plotParetoCurvesPushButton->setText(QApplication::translate("Dialog", "Plot Pareto Curves", Q_NULLPTR));
+        loadMeshPushButton->setText(QApplication::translate("Dialog", "Load Mesh", Q_NULLPTR));
+        closePushButton->setText(QApplication::translate("Dialog", "Close", Q_NULLPTR));
+        saveTopologyPushButton->setText(QApplication::translate("Dialog", "Save topology ", Q_NULLPTR));
+        saveCleanTopologyPushButton->setText(QApplication::translate("Dialog", "Create clean topology ", Q_NULLPTR));
+    } // retranslateUi
+
+};
+
+QT_END_NAMESPACE
+
+class OptimizationResultDialog : public QDialog, public Ui_OptimizationResultDialog {
+    Q_OBJECT
+
+public:
+    OptimizationResultDialog( QWidget *parent = 0);
+    ~OptimizationResultDialog();
+
+    void setViewer(TopOptViewer *v) { viewer = v;}
+
+
+private slots:
+    void createHTMLReport();
+    void plotCGIter();
+    void  plotParetoCurves();
+    void  plotComplianceCurve();
+    void  plotStressCurve();
+    void  plotMaxTempCurve();
+    void  plotEigenCurve();
+    void  saveMeshSurface();
+    void  saveMesh();
+    void  loadMesh();
+    void  saveCleanTopologyAtVol();
+    void  setTopologyAtVol();
+    void  saveTopology();
+    void  closeDialog();
+    void showEvent(QShowEvent *e);
+    void   saveComplianceCurve(const char *fileName);
+    void   saveStressCurve(const char *fileName);
+
+private:
+    TopOptViewer *viewer;
+    QMainWindow complianceWindow,stressWindow,eigenWindow,maxTempWindow,dataWindow;
+    void makeConnections();
+
+};
+////////////////////////////////////////////////////////////////////////////////
+
+

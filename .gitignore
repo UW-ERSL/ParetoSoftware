@@ -1,0 +1,56 @@
+# Ignore binary and library files
+*.exe
+*.bin
+*.dll
+*.obj
+*.lib
+*.sln
+*.vcproj
+*.vcxproj
+*.exe
+*.db
+*.ipch
+*.pch
+*.sdf
+
+/ParetoWorks/
+
+# Ignore documentation files
+*.doc
+*.docx
+*.pdf
+*.ppt
+*.pptx
+*.jpg
+*.png
+*.mat
+
+# Ignore Qt temp files 
+*.user
+*.idx
+
+
+# Ignore model files
+*.msh
+*.inp
+*.mesh
+*.uvw
+*.STL
+*.STEP
+*.prj
+*.off
+*.stl
+*.sldprt
+
+
+# Ignore temporary and backup files
+*.tmp
+*.bak
+*.log
+*.Debug
+*.Release
+*.tlog
+
+
+
+

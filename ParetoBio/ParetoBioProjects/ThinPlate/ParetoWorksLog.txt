@@ -1,0 +1,17 @@
+Date: 24,2(month), 2024  
+Model name: thinplate 
+ParetoWorks Version 2023.04 
+Build Date 12.05 
+-------------------------------------------------------- 
+Total bodies = 1 
+Total faces = 13  
+ParetoWorks: Tesselating body 0 
+ParetoWorks: Tesselation triangles = 1460  
+Scale = 0.24; volume = 6.1e-05; SW Area = 0.027  
+Minimum radius in model: 1.000000e+20  
+Recommended number of elements = 10000 
+After you close this msg, you should see "ParetoWorks Initialized!" in two places: (a) on your screen and (b) in the status bar.
+
+If not, please enable BufferSwapNotify under Tools->Addin 
+-----------------------------------------------------------
+ 
